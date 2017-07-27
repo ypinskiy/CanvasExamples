@@ -117,7 +117,7 @@ class Game {
 				y: 25
 			},
 			this.ui.pilePosition = {
-				x: this.ui.deckPosition.x + 20 + (this.ui.cardWidth * this.ui.scale),
+				x: this.ui.deckPosition.x + 20 + ( this.ui.cardWidth * this.ui.scale ),
 				y: this.ui.deckPosition.y
 			},
 			this.ui.slotPositions = {
@@ -140,45 +140,45 @@ class Game {
 			},
 			this.ui.columnPositions = {
 				first: {
-					x: this.ui.deckPosition.x + (this.ui.cardWidth * this.ui.scale * 3) + 20,
-					y: function(index, ui) {
-						return ui.deckPosition.y + ((index) * ((ui.cardHieght * ui.scale) * ui.topVisible));
+					x: this.ui.deckPosition.x + ( this.ui.cardWidth * this.ui.scale * 3 ) + 20,
+					y: function ( index, ui ) {
+						return ui.deckPosition.y + ( ( index ) * ( ( ui.cardHieght * ui.scale ) * ui.topVisible ) );
 					}
 				},
 				second: {
-					x: this.ui.deckPosition.x + (this.ui.cardWidth * this.ui.scale * 4) + 40,
-					y: function(index, ui) {
-						return ui.deckPosition.y + ((index) * ((ui.cardHieght * ui.scale) * ui.topVisible));
+					x: this.ui.deckPosition.x + ( this.ui.cardWidth * this.ui.scale * 4 ) + 40,
+					y: function ( index, ui ) {
+						return ui.deckPosition.y + ( ( index ) * ( ( ui.cardHieght * ui.scale ) * ui.topVisible ) );
 					}
 				},
 				third: {
-					x: this.ui.deckPosition.x + (this.ui.cardWidth * this.ui.scale * 5) + 60,
-					y: function(index, ui) {
-						return ui.deckPosition.y + ((index) * ((ui.cardHieght * ui.scale) * ui.topVisible));
+					x: this.ui.deckPosition.x + ( this.ui.cardWidth * this.ui.scale * 5 ) + 60,
+					y: function ( index, ui ) {
+						return ui.deckPosition.y + ( ( index ) * ( ( ui.cardHieght * ui.scale ) * ui.topVisible ) );
 					}
 				},
 				fourth: {
-					x: this.ui.deckPosition.x + (this.ui.cardWidth * this.ui.scale * 6) + 80,
-					y: function(index, ui) {
-						return ui.deckPosition.y + ((index) * ((ui.cardHieght * ui.scale) * ui.topVisible));
+					x: this.ui.deckPosition.x + ( this.ui.cardWidth * this.ui.scale * 6 ) + 80,
+					y: function ( index, ui ) {
+						return ui.deckPosition.y + ( ( index ) * ( ( ui.cardHieght * ui.scale ) * ui.topVisible ) );
 					}
 				},
 				fifth: {
-					x: this.ui.deckPosition.x + (this.ui.cardWidth * this.ui.scale * 7) + 100,
-					y: function(index, ui) {
-						return ui.deckPosition.y + ((index) * ((ui.cardHieght * ui.scale) * ui.topVisible));
+					x: this.ui.deckPosition.x + ( this.ui.cardWidth * this.ui.scale * 7 ) + 100,
+					y: function ( index, ui ) {
+						return ui.deckPosition.y + ( ( index ) * ( ( ui.cardHieght * ui.scale ) * ui.topVisible ) );
 					}
 				},
 				sixth: {
-					x: this.ui.deckPosition.x + (this.ui.cardWidth * this.ui.scale * 8) + 120,
-					y: function(index, ui) {
-						return ui.deckPosition.y + ((index) * ((ui.cardHieght * ui.scale) * ui.topVisible));
+					x: this.ui.deckPosition.x + ( this.ui.cardWidth * this.ui.scale * 8 ) + 120,
+					y: function ( index, ui ) {
+						return ui.deckPosition.y + ( ( index ) * ( ( ui.cardHieght * ui.scale ) * ui.topVisible ) );
 					}
 				},
 				seventh: {
-					x: this.ui.deckPosition.x + (this.ui.cardWidth * this.ui.scale * 9) + 140,
-					y: function(index, ui) {
-						return ui.deckPosition.y + ((index) * ((ui.cardHieght * ui.scale) * ui.topVisible));
+					x: this.ui.deckPosition.x + ( this.ui.cardWidth * this.ui.scale * 9 ) + 140,
+					y: function ( index, ui ) {
+						return ui.deckPosition.y + ( ( index ) * ( ( ui.cardHieght * ui.scale ) * ui.topVisible ) );
 					}
 				},
 			},
@@ -207,121 +207,121 @@ class Game {
 			this.selectedCards = [],
 			this.selectedCardsFrom = "none";
 	}
-	selectCards(from, index) {
-		if (this.selectedCards == [] && this.selectedCardsFrom == "none") {
+	selectCard( from, index ) {
+		if ( this.selectedCards == [] && this.selectedCardsFrom == "none" ) {
 			this.selectedCardsFrom = from;
-			switch (from) {
+			switch ( from ) {
 				case "pile":
-					this.selectedCards.push(this.cards[this.cards.length - 1]);
-					this.cards.splice(this.cards.length - 1, 1);
+					this.selectedCards.push( this.cards[ this.cards.length - 1 ] );
+					this.cards.splice( this.cards.length - 1, 1 );
 					break;
 				case "first":
 					var diff = this.columns.first.length - 1 - index;
-					for (var i = 0; i < diff; i++) {
-						this.selectedCards.push(this.columns.first[index]);
-						this.columns.first.splice(index, 1);
+					for ( var i = 0; i < diff; i++ ) {
+						this.selectedCards.push( this.columns.first[ index ] );
+						this.columns.first.splice( index, 1 );
 					}
 					break;
 				case "second":
 					var diff = this.columns.second.length - 1 - index;
-					for (var i = 0; i < diff; i++) {
-						this.selectedCards.push(this.columns.second[index]);
-						this.columns.second.splice(index, 1);
+					for ( var i = 0; i < diff; i++ ) {
+						this.selectedCards.push( this.columns.second[ index ] );
+						this.columns.second.splice( index, 1 );
 					}
 					break;
 				case "third":
 					var diff = this.columns.third.length - 1 - index;
-					for (var i = 0; i < diff; i++) {
-						this.selectedCards.push(this.columns.third[index]);
-						this.columns.third.splice(index, 1);
+					for ( var i = 0; i < diff; i++ ) {
+						this.selectedCards.push( this.columns.third[ index ] );
+						this.columns.third.splice( index, 1 );
 					}
 					break;
 				case "fourth":
 					var diff = this.columns.fourth.length - 1 - index;
-					for (var i = 0; i < diff; i++) {
-						this.selectedCards.push(this.columns.fourth[index]);
-						this.columns.fourth.splice(index, 1);
+					for ( var i = 0; i < diff; i++ ) {
+						this.selectedCards.push( this.columns.fourth[ index ] );
+						this.columns.fourth.splice( index, 1 );
 					}
 					break;
 				case "fifth":
 					var diff = this.columns.fifth.length - 1 - index;
-					for (var i = 0; i < diff; i++) {
-						this.selectedCards.push(this.columns.fifth[index]);
-						this.columns.fifth.splice(index, 1);
+					for ( var i = 0; i < diff; i++ ) {
+						this.selectedCards.push( this.columns.fifth[ index ] );
+						this.columns.fifth.splice( index, 1 );
 					}
 					break;
 				case "sixth":
 					var diff = this.columns.sixth.length - 1 - index;
-					for (var i = 0; i < diff; i++) {
-						this.selectedCards.push(this.columns.sixth[index]);
-						this.columns.sixth.splice(index, 1);
+					for ( var i = 0; i < diff; i++ ) {
+						this.selectedCards.push( this.columns.sixth[ index ] );
+						this.columns.sixth.splice( index, 1 );
 					}
 					break;
 				case "seventh":
 					var diff = this.columns.seventh.length - 1 - index;
-					for (var i = 0; i < diff; i++) {
-						this.selectedCards.push(this.columns.seventh[index]);
-						this.columns.seventh.splice(index, 1);
+					for ( var i = 0; i < diff; i++ ) {
+						this.selectedCards.push( this.columns.seventh[ index ] );
+						this.columns.seventh.splice( index, 1 );
 					}
 					break;
 			}
 		}
 	}
-	moveSelectedCardTo(to) {
-		if (this.selectedCard != null && this.selectedCardFrom != "none") {
+	moveSelectedCardTo( to ) {
+		if ( this.selectedCard != null && this.selectedCardFrom != "none" ) {
 			this.selectedCardFrom = "none";
-			switch (to) {
+			switch ( to ) {
 				case "first":
-					this.columns.first.push(this.selectedCard);
+					this.columns.first.push( this.selectedCard );
 					break;
 				case "second":
-					this.columns.second.push(this.selectedCard);
+					this.columns.second.push( this.selectedCard );
 					break;
 				case "third":
-					this.columns.third.push(this.selectedCard);
+					this.columns.third.push( this.selectedCard );
 					break;
 				case "fourth":
-					this.columns.fourth.push(this.selectedCard);
+					this.columns.fourth.push( this.selectedCard );
 					break;
 				case "fifth":
-					this.columns.fifth.push(this.selectedCard);
+					this.columns.fifth.push( this.selectedCard );
 					break;
 				case "sixth":
-					this.columns.sixth.push(this.selectedCard);
+					this.columns.sixth.push( this.selectedCard );
 					break;
 				case "seventh":
-					this.columns.seventh.push(this.selectedCard);
+					this.columns.seventh.push( this.selectedCard );
 					break;
 			}
 			this.selectedCard = null;
 		}
 	}
 	returnSelectedCardToOrigin() {
-		if (this.selectedCard != null && this.selectedCardFrom != "none") {
-			switch (this.selectedCardFrom) {
+		if ( this.selectedCard != null && this.selectedCardFrom != "none" ) {
+			switch ( this.selectedCardFrom ) {
 				case "pile":
-					this.cards.push(this.selectedCard);
+					this.cards.push( this.selectedCard );
 					break;
 				case "first":
-					this.columns.first.push(this.selectedCard);
+					this.columns.first.push( this.selectedCard );
 					break;
 				case "second":
-					this.columns.second.push(this.selectedCard);
+					this.columns.second.push( this.selectedCard );
 					break;
 				case "third":
-					this.columns.third.push(this.selectedCard);
+					this.columns.third.push( this.selectedCard );
 					break;
 				case "fourth":
-					this.columns.fourth.push(this.selectedCard);
+					this.columns.fourth.push( this.selectedCard );
 					break;
 				case "fifth":
-					this.columns.fifth.push(this.selectedCard);
+					this.columns.fifth.push( this.selectedCard );
 					break;
 				case "sixth":
-					this.columns.sixth.push(this.selectedCard);
+					this.columns.sixth.push( this.selectedCard );
 					break;
 				case "seventh":
-					this.columns.seventh.push(this.selectedCard);
+					this.columns.seventh.push( this.selectedCard );
 					break;
 			}
 			this.selectedCard = null;
@@ -331,17 +331,17 @@ class Game {
 	shuffle() {
 		var currentIndex = this.deck.length,
 			temporaryValue, randomIndex;
-		while (0 !== currentIndex) {
-			randomIndex = Math.floor(Math.random() * currentIndex);
+		while ( 0 !== currentIndex ) {
+			randomIndex = Math.floor( Math.random() * currentIndex );
 			currentIndex -= 1;
-			temporaryValue = this.deck[currentIndex];
-			this.deck[currentIndex] = this.deck[randomIndex];
-			this.deck[randomIndex] = temporaryValue;
+			temporaryValue = this.deck[ currentIndex ];
+			this.deck[ currentIndex ] = this.deck[ randomIndex ];
+			this.deck[ randomIndex ] = temporaryValue;
 		}
 	}
 	populateDeck() {
 		var cards = [];
-		cards.push({
+		cards.push( {
 			value: 1,
 			suit: "clubs",
 			visible: false,
@@ -353,8 +353,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 2,
 			suit: "clubs",
 			visible: false,
@@ -366,8 +366,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 3,
 			suit: "clubs",
 			visible: false,
@@ -379,8 +379,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 4,
 			suit: "clubs",
 			visible: false,
@@ -392,8 +392,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 5,
 			suit: "clubs",
 			visible: false,
@@ -405,8 +405,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 6,
 			suit: "clubs",
 			visible: false,
@@ -418,8 +418,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 7,
 			suit: "clubs",
 			visible: false,
@@ -431,8 +431,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 8,
 			suit: "clubs",
 			visible: false,
@@ -444,8 +444,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 9,
 			suit: "clubs",
 			visible: false,
@@ -457,8 +457,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 10,
 			suit: "clubs",
 			visible: false,
@@ -470,8 +470,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 11,
 			suit: "clubs",
 			visible: false,
@@ -483,8 +483,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 12,
 			suit: "clubs",
 			visible: false,
@@ -496,8 +496,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 13,
 			suit: "clubs",
 			visible: false,
@@ -509,8 +509,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 1,
 			suit: "spades",
 			visible: false,
@@ -522,8 +522,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 2,
 			suit: "spades",
 			visible: false,
@@ -535,8 +535,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 3,
 			suit: "spades",
 			visible: false,
@@ -548,8 +548,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 4,
 			suit: "spades",
 			visible: false,
@@ -561,8 +561,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 5,
 			suit: "spades",
 			visible: false,
@@ -574,8 +574,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 6,
 			suit: "spades",
 			visible: false,
@@ -587,8 +587,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 7,
 			suit: "spades",
 			visible: false,
@@ -600,8 +600,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 8,
 			suit: "spades",
 			visible: false,
@@ -613,8 +613,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 9,
 			suit: "spades",
 			visible: false,
@@ -626,8 +626,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 10,
 			suit: "spades",
 			visible: false,
@@ -639,8 +639,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 11,
 			suit: "spades",
 			visible: false,
@@ -652,8 +652,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 12,
 			suit: "spades",
 			visible: false,
@@ -665,8 +665,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 13,
 			suit: "spades",
 			visible: false,
@@ -678,8 +678,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 1,
 			suit: "hearts",
 			visible: false,
@@ -691,8 +691,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 2,
 			suit: "hearts",
 			visible: false,
@@ -704,8 +704,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 3,
 			suit: "hearts",
 			visible: false,
@@ -717,8 +717,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 4,
 			suit: "hearts",
 			visible: false,
@@ -730,8 +730,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 5,
 			suit: "hearts",
 			visible: false,
@@ -743,8 +743,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 6,
 			suit: "hearts",
 			visible: false,
@@ -756,8 +756,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 7,
 			suit: "hearts",
 			visible: false,
@@ -769,8 +769,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 8,
 			suit: "hearts",
 			visible: false,
@@ -782,8 +782,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 9,
 			suit: "hearts",
 			visible: false,
@@ -795,8 +795,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 10,
 			suit: "hearts",
 			visible: false,
@@ -808,8 +808,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 11,
 			suit: "hearts",
 			visible: false,
@@ -821,8 +821,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 12,
 			suit: "hearts",
 			visible: false,
@@ -834,8 +834,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 13,
 			suit: "hearts",
 			visible: false,
@@ -847,8 +847,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 1,
 			suit: "diamonds",
 			visible: false,
@@ -860,8 +860,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 2,
 			suit: "diamonds",
 			visible: false,
@@ -873,8 +873,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 3,
 			suit: "diamonds",
 			visible: false,
@@ -886,8 +886,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 4,
 			suit: "diamonds",
 			visible: false,
@@ -899,8 +899,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 5,
 			suit: "diamonds",
 			visible: false,
@@ -912,8 +912,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 6,
 			suit: "diamonds",
 			visible: false,
@@ -925,8 +925,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 7,
 			suit: "diamonds",
 			visible: false,
@@ -938,8 +938,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 8,
 			suit: "diamonds",
 			visible: false,
@@ -951,8 +951,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 9,
 			suit: "diamonds",
 			visible: false,
@@ -964,8 +964,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 10,
 			suit: "diamonds",
 			visible: false,
@@ -977,8 +977,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 11,
 			suit: "diamonds",
 			visible: false,
@@ -990,8 +990,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 12,
 			suit: "diamonds",
 			visible: false,
@@ -1003,8 +1003,8 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
-		cards.push({
+		} );
+		cards.push( {
 			value: 13,
 			suit: "diamonds",
 			visible: false,
@@ -1016,16 +1016,16 @@ class Game {
 				x: this.ui.deckPosition.x,
 				y: this.ui.deckPosition.y
 			}
-		});
+		} );
 		this.deck = cards;
 	}
-	getCardImage(card) {
-		if (!card.visible) {
+	getCardImage( card ) {
+		if ( !card.visible ) {
 			return cardBack;
 		} else {
-			switch (card.suit) {
+			switch ( card.suit ) {
 				case "clubs":
-					switch (card.value) {
+					switch ( card.value ) {
 						case 1:
 							return cardClubsA;
 							break;
@@ -1068,7 +1068,7 @@ class Game {
 					}
 					break;
 				case "spades":
-					switch (card.value) {
+					switch ( card.value ) {
 						case 1:
 							return cardSpadesA;
 							break;
@@ -1111,7 +1111,7 @@ class Game {
 					}
 					break;
 				case "hearts":
-					switch (card.value) {
+					switch ( card.value ) {
 						case 1:
 							return cardHeartsA;
 							break;
@@ -1154,7 +1154,7 @@ class Game {
 					}
 					break;
 				case "diamonds":
-					switch (card.value) {
+					switch ( card.value ) {
 						case 1:
 							return cardDiamondsA;
 							break;
@@ -1200,47 +1200,47 @@ class Game {
 		}
 		return resultImage;
 	}
-	isDeck(x, y) {
+	isDeck( x, y ) {
 		var result = false;
-		if (x >= this.ui.deckPosition.x && x <= this.ui.deckPosition.x + (this.ui.cardWidth * this.ui.scale) && y >= this.ui.deckPosition.y && y <= this.ui.deckPosition.y + (this.ui.cardHieght * this.ui.scale)) {
+		if ( x >= this.ui.deckPosition.x && x <= this.ui.deckPosition.x + ( this.ui.cardWidth * this.ui.scale ) && y >= this.ui.deckPosition.y && y <= this.ui.deckPosition.y + ( this.ui.cardHieght * this.ui.scale ) ) {
 			result = true;
 		}
 		return result;
 	}
-	isColumn(x, y) {
+	isColumn( x, y ) {
 		var result = false;
-		if (x > this.ui.columnPositions.first.x && x < this.ui.columnPositions.seventh.x + (this.ui.cardWidth * this.ui.scale) && y > this.ui.columnPositions.first.y(0, this.ui) && y < this.ui.columnPositions.first.y(12, this.ui) + (this.ui.cardHieght * this.ui.scale)) {
+		if ( x > this.ui.columnPositions.first.x && x < this.ui.columnPositions.seventh.x + ( this.ui.cardWidth * this.ui.scale ) && y > this.ui.columnPositions.first.y( 0, this.ui ) && y < this.ui.columnPositions.first.y( 12, this.ui ) + ( this.ui.cardHieght * this.ui.scale ) ) {
 			result = true;
 		}
 		return result;
 	}
-	whichColumn(x, y) {
+	whichColumn( x, y ) {
 		var result = "none";
-		if (x > this.ui.columnPositions.first.x && x < this.ui.columnPositions.first.x + (this.ui.cardWidth * this.ui.scale)) {
+		if ( x > this.ui.columnPositions.first.x && x < this.ui.columnPositions.first.x + ( this.ui.cardWidth * this.ui.scale ) ) {
 			result = "first";
-		} else if (x > this.ui.columnPositions.second.x && x < this.ui.columnPositions.second.x + (this.ui.cardWidth * this.ui.scale)) {
+		} else if ( x > this.ui.columnPositions.second.x && x < this.ui.columnPositions.second.x + ( this.ui.cardWidth * this.ui.scale ) ) {
 			result = "second";
-		} else if (x > this.ui.columnPositions.third.x && x < this.ui.columnPositions.third.x + (this.ui.cardWidth * this.ui.scale)) {
+		} else if ( x > this.ui.columnPositions.third.x && x < this.ui.columnPositions.third.x + ( this.ui.cardWidth * this.ui.scale ) ) {
 			result = "third";
-		} else if (x > this.ui.columnPositions.fourth.x && x < this.ui.columnPositions.fourth.x + (this.ui.cardWidth * this.ui.scale)) {
+		} else if ( x > this.ui.columnPositions.fourth.x && x < this.ui.columnPositions.fourth.x + ( this.ui.cardWidth * this.ui.scale ) ) {
 			result = "fourth";
-		} else if (x > this.ui.columnPositions.fifth.x && x < this.ui.columnPositions.fifth.x + (this.ui.cardWidth * this.ui.scale)) {
+		} else if ( x > this.ui.columnPositions.fifth.x && x < this.ui.columnPositions.fifth.x + ( this.ui.cardWidth * this.ui.scale ) ) {
 			result = "fifth";
-		} else if (x > this.ui.columnPositions.sixth.x && x < this.ui.columnPositions.sixth.x + (this.ui.cardWidth * this.ui.scale)) {
+		} else if ( x > this.ui.columnPositions.sixth.x && x < this.ui.columnPositions.sixth.x + ( this.ui.cardWidth * this.ui.scale ) ) {
 			result = "sixth";
-		} else if (x > this.ui.columnPositions.seventh.x && x < this.ui.columnPositions.seventh.x + (this.ui.cardWidth * this.ui.scale)) {
+		} else if ( x > this.ui.columnPositions.seventh.x && x < this.ui.columnPositions.seventh.x + ( this.ui.cardWidth * this.ui.scale ) ) {
 			result = "seventh";
 		}
 		return result;
 	}
-	whichIndex(y, column) {
-		switch (column) {
+	whichIndex( y, column ) {
+		switch ( column ) {
 			case "first":
-				if (y > this.ui.columnPositions.first.y(this.columns.first.length - 1, this.ui) && y < this.ui.columnPositions.first.y(this.columns.first.length - 1, this.ui) + (this.ui.cardHieght * this.ui.scale)) {
+				if ( y > this.ui.columnPositions.first.y( this.columns.first.length - 1, this.ui ) && y < this.ui.columnPositions.first.y( this.columns.first.length - 1, this.ui ) + ( this.ui.cardHieght * this.ui.scale ) ) {
 					return this.columns.first.length - 1;
 				} else {
-					for (var i = 0; i < this.columns.first.length; i++) {
-						if (y > this.ui.columnPositions.first.y(i, this.ui) && y < this.ui.columnPositions.first.y(i, this.ui) + (this.ui.cardHieght * this.ui.scale * this.ui.topVisible)) {
+					for ( var i = 0; i < this.columns.first.length; i++ ) {
+						if ( y > this.ui.columnPositions.first.y( i, this.ui ) && y < this.ui.columnPositions.first.y( i, this.ui ) + ( this.ui.cardHieght * this.ui.scale * this.ui.topVisible ) ) {
 							return i;
 						}
 					}
@@ -1248,48 +1248,48 @@ class Game {
 				}
 				break;
 			case "second":
-				for (var i = 0; i < this.columns.second.length; i++) {
-					if (y > this.ui.columnPositions.second.y(i, this.ui) && y < this.ui.columnPositions.second.y(i, this.ui) + (this.ui.cardHieght * this.ui.scale * this.ui.topVisible)) {
+				for ( var i = 0; i < this.columns.second.length; i++ ) {
+					if ( y > this.ui.columnPositions.second.y( i, this.ui ) && y < this.ui.columnPositions.second.y( i, this.ui ) + ( this.ui.cardHieght * this.ui.scale * this.ui.topVisible ) ) {
 						return i;
 					}
 				}
 				return -1;
 				break;
 			case "third":
-				for (var i = 0; i < this.columns.third.length; i++) {
-					if (y > this.ui.columnPositions.third.y(i, this.ui) && y < this.ui.columnPositions.third.y(i, this.ui) + (this.ui.cardHieght * this.ui.scale * this.ui.topVisible)) {
+				for ( var i = 0; i < this.columns.third.length; i++ ) {
+					if ( y > this.ui.columnPositions.third.y( i, this.ui ) && y < this.ui.columnPositions.third.y( i, this.ui ) + ( this.ui.cardHieght * this.ui.scale * this.ui.topVisible ) ) {
 						return i;
 					}
 				}
 				return -1;
 				break;
 			case "fourth":
-				for (var i = 0; i < this.columns.fourth.length; i++) {
-					if (y > this.ui.columnPositions.fourth.y(i, this.ui) && y < this.ui.columnPositions.fourth.y(i, this.ui) + (this.ui.cardHieght * this.ui.scale * this.ui.topVisible)) {
+				for ( var i = 0; i < this.columns.fourth.length; i++ ) {
+					if ( y > this.ui.columnPositions.fourth.y( i, this.ui ) && y < this.ui.columnPositions.fourth.y( i, this.ui ) + ( this.ui.cardHieght * this.ui.scale * this.ui.topVisible ) ) {
 						return i;
 					}
 				}
 				return -1;
 				break;
 			case "fifth":
-				for (var i = 0; i < this.columns.fifth.length; i++) {
-					if (y > this.ui.columnPositions.fifth.y(i, this.ui) && y < this.ui.columnPositions.fifth.y(i, this.ui) + (this.ui.cardHieght * this.ui.scale * this.ui.topVisible)) {
+				for ( var i = 0; i < this.columns.fifth.length; i++ ) {
+					if ( y > this.ui.columnPositions.fifth.y( i, this.ui ) && y < this.ui.columnPositions.fifth.y( i, this.ui ) + ( this.ui.cardHieght * this.ui.scale * this.ui.topVisible ) ) {
 						return i;
 					}
 				}
 				return -1;
 				break;
 			case "sixth":
-				for (var i = 0; i < this.columns.sixth.length; i++) {
-					if (y > this.ui.columnPositions.sixth.y(i, this.ui) && y < this.ui.columnPositions.sixth.y(i, this.ui) + (this.ui.cardHieght * this.ui.scale * this.ui.topVisible)) {
+				for ( var i = 0; i < this.columns.sixth.length; i++ ) {
+					if ( y > this.ui.columnPositions.sixth.y( i, this.ui ) && y < this.ui.columnPositions.sixth.y( i, this.ui ) + ( this.ui.cardHieght * this.ui.scale * this.ui.topVisible ) ) {
 						return i;
 					}
 				}
 				return -1;
 				break;
 			case "seventh":
-				for (var i = 0; i < this.columns.seventh.length; i++) {
-					if (y > this.ui.columnPositions.seventh.y(i, this.ui) && y < this.ui.columnPositions.seventh.y(i, this.ui) + (this.ui.cardHieght * this.ui.scale * this.ui.topVisible)) {
+				for ( var i = 0; i < this.columns.seventh.length; i++ ) {
+					if ( y > this.ui.columnPositions.seventh.y( i, this.ui ) && y < this.ui.columnPositions.seventh.y( i, this.ui ) + ( this.ui.cardHieght * this.ui.scale * this.ui.topVisible ) ) {
 						return i;
 					}
 				}
@@ -1297,13 +1297,13 @@ class Game {
 				break;
 		}
 	}
-	isSuiteSlot(x, y) {
+	isSuiteSlot( x, y ) {
 		var result = false;
 		return result;
 	}
-	isCardPile(x, y) {
+	isCardPile( x, y ) {
 		var result = false;
-		if (x >= (this.ui.deckPosition.x + 20 + (this.ui.cardWidth * this.ui.scale)) && x <= this.ui.deckPosition.x + 20 + (this.ui.cardWidth * this.ui.scale) + (this.ui.cardWidth * this.ui.scale) + 4 && y >= this.ui.deckPosition.y && y <= this.ui.deckPosition.y + (this.ui.cardHieght * this.ui.scale) + 4) {
+		if ( x >= ( this.ui.deckPosition.x + 20 + ( this.ui.cardWidth * this.ui.scale ) ) && x <= this.ui.deckPosition.x + 20 + ( this.ui.cardWidth * this.ui.scale ) + ( this.ui.cardWidth * this.ui.scale ) + 4 && y >= this.ui.deckPosition.y && y <= this.ui.deckPosition.y + ( this.ui.cardHieght * this.ui.scale ) + 4 ) {
 			result = true;
 		}
 		return result;
